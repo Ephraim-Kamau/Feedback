@@ -9,6 +9,6 @@ def welcome(request):
 def projects_today(request):
     date = dt.date.today()
 
-    return render(request, 'all-projects/today-projectss.html', {"date":date,})    
+    return render(request, 'all-projects/today-projects.html', {"date":date,})    
 
    
