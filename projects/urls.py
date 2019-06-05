@@ -9,6 +9,7 @@ urlpatterns=[
     url(r'^profile/', views.profile, name='profile'), 
     url(r'new/profile$',views.new_profile,name='new_profile'),
     url(r'new/topic$',views.new_topic,name='new_topic'),
+    url(r'topic/always',views.always_topic,name='always_topic'),
 
 ]
 if settings.DEBUG:

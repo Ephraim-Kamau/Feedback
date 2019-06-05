@@ -2,16 +2,21 @@ from django.http  import HttpResponse
 from django.shortcuts import render,redirect
 import datetime as dt
 from .forms import NewProfileForm,NewTopicsForm
+from .models import Topics
 
 # Create your views here.
 def projects_today(request):
-    date = dt.date.today()
+    topics = Topics.objects.all()
 
-    return render(request, 'today-projects.html', {"date":date,})  
+    return render(request, 'today-projects.html', {"topics":topics})  
 
 def profile(request):
 
     return render(request, 'profile.html',)
+
+def always_topic(request):
+
+    return render(request, 'always.html',)    
 
 
 def new_profile(request):
