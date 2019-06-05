@@ -14,3 +14,16 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete() 
+
+class Topics(models.Model):
+    title=models.TextField(max_length=100)
+    description=models.TextField()
+    profile = models.ForeignKey(User, on_delete = models.CASCADE, null=True)    
+    image_header=models.ImageField(upload_to = 'images/')   
+
+
+    def save_topics(self):
+        self.save() 
+
+    def delete_topics(self):
+        self.delete()     
