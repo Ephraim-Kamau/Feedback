@@ -6,7 +6,12 @@ import datetime as dt
 def projects_today(request):
     date = dt.date.today()
 
-    return render(request, 'today-projects.html', {"date":date,})    
+    return render(request, 'today-projects.html', {"date":date,})  
+
+def profile(request):
+
+    return render(request, 'profile.html',)
+
 
 def search_results(request):
 
