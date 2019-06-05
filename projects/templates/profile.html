@@ -4,9 +4,9 @@
 
     <div class="container">
         <div class="jumbotron" style="text-align:center; background-color: #eceeee; font-size:50px;">
-        <h2>Username: {{user}}</h2><hr>
-        <img src= ""alt="image">
-        <h2>Email: kamau@gmail.com</h2><hr>    
+        <h2>Username: {{user.profile.full_name}}</h2><hr>
+        <img class="img-responsive" src= "{{user.profile.profile_pic.url}}" class="img-responsive" style=" float:center; width:500px;height:300px;padding:0;" alt="image">
+        <h2>Email: {{user.profile.email}}</h2><hr>    
         <a href="/new/profile" button class="btn btn-warning" type="submit" name="button">Edit Profile</button></a>       
 
     </div>

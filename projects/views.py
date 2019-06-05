@@ -1,5 +1,5 @@
 from django.http  import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import datetime as dt
 from .forms import NewProfileForm
 
