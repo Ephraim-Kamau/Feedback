@@ -27,3 +27,12 @@ class Topics(models.Model):
 
     def delete_topics(self):
         self.delete()     
+
+class Comments(models.Model):
+    comment=models.TextField()
+
+    def save_comments(self):
+        self.save() 
+
+    def delete_comments(self):
+        self.delete()        

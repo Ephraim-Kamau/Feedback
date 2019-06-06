@@ -1,8 +1,8 @@
 from django.http  import HttpResponse
 from django.shortcuts import render,redirect
 import datetime as dt
-from .forms import NewProfileForm,NewTopicsForm
-from .models import Topics
+from .forms import NewProfileForm,NewTopicsForm,NewCommentsForm
+from .models import Topics,Comments,Profile
 
 # Create your views here.
 def projects_today(request):
@@ -12,12 +12,27 @@ def projects_today(request):
 
 def profile(request):
 
-    return render(request, 'profile.html',)
+    return render(request, 'profile.html')
 
 def always_topic(request):
 
-    return render(request, 'always.html',)    
+    return render(request, 'always.html')    
 
+def comment(request):
+    current_user=request.user
+
+    if request.method=='POST':
+        form=NewCommentsForm(request.POST,request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)      
+            post.profile = current_user
+            post.save()
+        return redirect("always_topic")
+    else:
+        form = NewCommentsForm() 
+    return render(request,'comments.html',{"form":form}) 
+
+    
 
 def new_profile(request):
     current_user=request.user
