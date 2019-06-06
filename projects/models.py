@@ -21,12 +21,19 @@ class Topics(models.Model):
     profile = models.ForeignKey(User, on_delete = models.CASCADE, null=True)    
     image_header=models.ImageField(upload_to = 'images/')   
 
+    def __str__(self):
+        return self.title
 
     def save_topics(self):
         self.save() 
 
     def delete_topics(self):
         self.delete()     
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        topics = cls.objects.filter(title__icontains=search_term)
+        return topics    
 
 class Comments(models.Model):
     comment=models.TextField()

@@ -2,6 +2,27 @@
 {% block content %} 
 {{ block.super}}
 
+<div class="container">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle btn btn-success" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                <span class="caret"></span>
+            </a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="{%url 'projectsToday'%}">Home</a>
+        </li>
+        <li>
+          <a href="/accounts/password/change">Change Password</a>
+        </li>
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+        
+      </ul>
+    </li>
+  
+</div>
+
     <div class="container">
         <div class="jumbotron" style="text-align:center; background-color: #eceeee; font-size:50px;">
         <h2>Username: {{user.profile.full_name}}</h2><hr>

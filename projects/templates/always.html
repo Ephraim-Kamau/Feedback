@@ -9,18 +9,21 @@
     </div>
 </div>
 
+<div class="container" style="background-color: #dddfdf;">
+        {% for topic in topics %} 
 <div class="col-md-6">
-<div class="container">
-<div class="card" style="text-align:left;">
-<h2>Title: {{topics.title}}</h2><hr>
-<h2>Description: {{topics.title}}</h2><hr>
-<img class="img-responsive" src= "{{topics.image_header.url}}" class="img-responsive" style=" float:center; width:400px;height:300px;padding:0;" alt="image">
+
+<h2 style="font-size:25px; font-family: 'Akronim', cursive;">Title: {{topic.title}}</h2><hr>
+<img class="img-responsive" src= "{{topic.image_header.url}}" class="img-responsive" style=" float:center; width:400px;height:300px;padding:0;" alt="image"><hr>
 <a href="topic/comment" button class="btn btn-success" type="submit" name="button">Add A Comment</button></a>       
+</div>
+{% endfor %} 
+{% for comment in comments %}
+<h2 style="font-size:25px; font-family: 'Akronim', cursive;">Name: {{user.profile.full_name}}</h2><hr>
+<h2 style="font-size:25px; font-family: 'Akronim', cursive;">Comment: {{comment.comment}}</h2>
+{% endfor %}
+</div>
 
-
-</div>
-</div>
-</div>
 
 
 {% endblock %}

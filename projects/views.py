@@ -15,8 +15,11 @@ def profile(request):
     return render(request, 'profile.html')
 
 def always_topic(request):
+    topics = Topics.objects.all()
+    comments = Comments.objects.all()
 
-    return render(request, 'always.html')    
+    return render(request, 'always.html',{"topics":topics, "comments":comments}) 
+
 
 def comment(request):
     current_user=request.user
