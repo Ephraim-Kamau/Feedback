@@ -3,8 +3,11 @@ from django.shortcuts import render,redirect
 import datetime as dt
 from .forms import NewProfileForm,NewTopicsForm,NewCommentsForm
 from .models import Topics,Comments,Profile
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def projects_today(request):
     topics = Topics.objects.all()
 
@@ -20,7 +23,7 @@ def always_topic(request):
 
     return render(request, 'always.html',{"topics":topics, "comments":comments}) 
 
-
+@login_required(login_url='/accounts/login/')
 def comment(request):
     current_user=request.user
 
@@ -36,7 +39,6 @@ def comment(request):
     return render(request,'comments.html',{"form":form}) 
 
     
-
 def new_profile(request):
     current_user=request.user
 
@@ -70,7 +72,7 @@ def search_results(request):
 
     if 'topics' in request.GET and request.GET["topics"]:
         search_term = request.GET.get("topics")
-        searched_articles = Topics.search_by_title(search_term)
+        searched_topics = Topics.search_by_title(search_term)
         message = f"{search_term}"
 
         return render(request, 'search.html',{"message":message,"topics": searched_topics})
