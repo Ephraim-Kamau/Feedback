@@ -3,8 +3,12 @@
 {% block content %}
 <div class="container">
   <div class="row">
+       
     <!-- Empty div -->
-    <div class="col-md-4"></div>
+    <div class="col-md-8">
+                <img  src="/media/images/feedback2.jpg" style="width:1000px;height:600px;padding-top: 10px" alt="image">
+        </div>
+    <div class="col-md-4" style="padding-top: 10px"></div>
     <div class="col-md-4">
       {% if form.errors %}
         <p> Password or Username is incorrect </p>
@@ -28,6 +32,9 @@
 
           </form>
 
+          <p style="text-align: center">Don't have an Account? <a href="/accounts/register/"><br>
+            Sign Up Here</a></p>
+
         </div>
 
       </div>
@@ -36,6 +43,28 @@
     <!-- empty div -->
     <div class="col-md-4"></div>
   </div>
-</div>
+</div><hr>
+<div class="container">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="row">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3 insta_footer">
+                <span style="margin-left:30px;color: #999;"> <strong> FEEDBACK </strong></span>
+                <span style="margin-left:30px;color: #999;"> <strong> SUPPORT </strong></span>
+                <span style="margin-left:30px;color: #999;"> <strong> PROFILES </strong></span>
+                <span style="margin-left:30px;color: #999;"> <strong> HASHTAGS</strong></span>
+                <span style="margin-left:30px;color: #999;"> <strong> LANGUAGES </strong></span>
+                <span style="margin-left:30px;color: #999;"> <strong> TERMS </strong></span>
+                <span style="margin-left:30px;color: #999;"> <strong> © 2019 FEEDBACK </strong></span>
+
+                
+
+
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
+    <!-- Footer -->
 
 {% endblock %}

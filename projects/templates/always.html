@@ -4,9 +4,8 @@
 {{block.super}}
 
 <div class="container">
-    <div class="jumbotron" style="text-align:center; background-color: #f5d548; font-size:60px;">
-        <span style="font-size:60px; font-family: 'Akronim', cursive;">GIVE US YOUR OPINION</span>
-    </div>
+        <img class="img-responsive" src="/media/images/feedback1.jpg"
+        style=" float:center; width:1200px;height:300px;padding:0;" alt="image">
 </div>
 
 <div class="container" style="background-color: #dddfdf;">
@@ -19,11 +18,33 @@
 </div>
 {% endfor %} 
 {% for comment in comments %}
-<h2 style="font-size:25px; font-family: 'Akronim', cursive;">Name: {{user.profile.full_name}}</h2><hr>
+<h2 style="font-size:25px; font-family: 'Akronim', cursive;">Name: {{comment.profile}}</h2><hr>
 <h2 style="font-size:25px; font-family: 'Akronim', cursive;">Comment: {{comment.comment}}</h2>
 {% endfor %}
-</div>
+</div><hr>
 
+<div class="container">
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="row">
+                        <!-- Copyright -->
+                        <div class="footer-copyright text-center py-3 insta_footer">
+                            <span style="margin-left:30px;color: #999;"> <strong> FEEDBACK </strong></span>
+                            <span style="margin-left:30px;color: #999;"> <strong> SUPPORT </strong></span>
+                            <span style="margin-left:30px;color: #999;"> <strong> PROFILES </strong></span>
+                            <span style="margin-left:30px;color: #999;"> <strong> HASHTAGS</strong></span>
+                            <span style="margin-left:30px;color: #999;"> <strong> LANGUAGES </strong></span>
+                            <span style="margin-left:30px;color: #999;"> <strong> TERMS </strong></span>
+                            <span style="margin-left:30px;color: #999;"> <strong> © 2019 FEEDBACK </strong></span>
 
+                            
+        
+        
+                        </div>
+                        <!-- Copyright -->
+                    </div>
+                </footer>
+                <!-- Footer -->
 
 {% endblock %}
+

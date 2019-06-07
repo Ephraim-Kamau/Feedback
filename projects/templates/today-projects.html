@@ -4,8 +4,8 @@
 {{block.super}}
 
 <div class="container">
-    <div class="jumbotron" style="text-align:center; background-color: #00ffff; font-size:60px;">
-        <span style="font-size:60px; font-family: 'Akronim', cursive;">YOUR FEEDBACK, OUR PRIORITY</span>
+        <img class="img-responsive" src="/media/images/opinion.png" 
+        style=" float:center; width:800px;height:300px;padding:0;" alt="image">
     </div>
 </div>
 
@@ -24,13 +24,34 @@
             <img class="img-responsive" src="{{topic.image_header.url}}" class="img-responsive"
                 style=" float:center; width:400px;height:300px;padding:0;" alt="image">
             <hr>
-            <a href="topic/always" button class="btn btn-success" type="submit" name="button">View More</button></a>
+            <a href="topic/always" button class="btn btn-success" type="submit" name="button">View More</button></a><hr>
 
 
         </div>
         {% endfor %}
     </div>
-</div>
+</div><hr>
+
+<div class="container">
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="row">
+                <!-- Copyright -->
+                <div class="footer-copyright text-center py-3 insta_footer">
+                    <span style="margin-left:30px;color: #999;"> <strong> FEEDBACK </strong></span>
+                    <span style="margin-left:30px;color: #999;"> <strong> SUPPORT </strong></span>
+                    <span style="margin-left:30px;color: #999;"> <strong> PROFILES </strong></span>
+                    <span style="margin-left:30px;color: #999;"> <strong> HASHTAGS</strong></span>
+                    <span style="margin-left:30px;color: #999;"> <strong> LANGUAGES </strong></span>
+                    <span style="margin-left:30px;color: #999;"> <strong> TERMS </strong></span>
+                    <span style="margin-left:30px;color: rgb(238, 238, 238);"> <strong> © 2019 FEEDBACK </strong></span>
+
+                    
 
 
+                </div>
+                <!-- Copyright -->
+            </div>
+        </footer>
+        <!-- Footer -->
 {% endblock %}

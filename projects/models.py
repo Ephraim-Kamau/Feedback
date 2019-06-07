@@ -37,6 +37,7 @@ class Topics(models.Model):
 
 class Comments(models.Model):
     comment=models.TextField()
+    profile = models.ForeignKey(User, on_delete = models.CASCADE, null=True)        
 
     def save_comments(self):
         self.save() 
